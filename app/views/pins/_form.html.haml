@@ -6,7 +6,9 @@
         prevented this Pin from saving
       %ul
         - @pin.errors.full_messages.each do |msg|
-          %li = %msg
+          %li=msg
+  .form-group
+    = f.input :image, class: 'form-control'
   .form-group
     = f.input :title, class: 'form-control'
   .form-group
