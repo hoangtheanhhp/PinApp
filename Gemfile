@@ -35,3 +35,5 @@ gem 'devise', '~> 4.3'
 gem 'jquery-rails'
 gem 'paperclip', '~> 5.1'
 gem 'masonry-rails', '~> 0.2.4'
+gem 'acts_as_votable', '~> 0.11.1'
+gem "font-awesome-rails"

@@ -17,11 +17,13 @@
  *= require 'masonry/infinitescroll'
  *= require 'masonry/right-to-left'
  *= require 'masonry/transitions'
+ *= require font-awesome
  *= require_tree .
  *= require_self
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 body {
 	background-color: #e9e2e3;
 }

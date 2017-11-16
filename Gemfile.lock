@@ -38,6 +38,7 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_votable (0.11.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
@@ -80,6 +81,8 @@ GEM
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -219,11 +222,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_votable (~> 0.11.1)
   bootstrap-sass (~> 3.3, >= 3.3.7)
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise (~> 4.3)
+  font-awesome-rails
   haml (~> 5.0, >= 5.0.4)
   jbuilder (~> 2.5)
   jquery-rails

@@ -1,8 +1,15 @@
 class PinsController < ApplicationController
-    before_action :find_pin, only: [:show, :edit, :update, :destroy]
+    before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
+    before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :upvote]
+    before_action :correct_user, only: [:edit, :update]
     def index 
-        @pins = Pin.all.order("created_at DESC")
+        if authenticate_user!
+            @pins = Pin.all.order("created_at DESC")
+        else
+            redirect_to new_user_session_path
+        end
     end
+
     def new 
         @pin = current_user.pins.build
     end
@@ -35,6 +42,11 @@ class PinsController < ApplicationController
         redirect_to root_path
     end
 
+    def upvote
+        @pin.upvote_by current_user
+        redirect_back fallback_location: root_path
+    end
+
     private
     def pin_params
         params.require(:pin).permit(:title, :description, :image)
@@ -42,5 +54,10 @@ class PinsController < ApplicationController
 
     def find_pin
         @pin = Pin.find(params[:id])
+    end
+
+    def correct_user 
+      @user = Pin.find(params[:id]).user
+      redirect_to(root_url) unless (@user===current_user)
     end
 end

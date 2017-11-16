@@ -1,14 +1,14 @@
 !!! 5
 %html
 %head
-  %title Pin Board
+  %title Pinアイン
   = csrf_meta_tags 
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' 
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
 %body
   %nav.navbar.navbar-default
     .container 
-      .navbar-brand= link_to "Pin Board", root_path
+      .navbar-brand= link_to "Pinアイン", root_path
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li= link_to "New Pin", new_pin_path
